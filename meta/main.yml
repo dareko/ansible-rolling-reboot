@@ -1,0 +1,44 @@
+---
+galaxy_info:
+  author: Dariusz Owczarek
+  description: Playbook for servers reboot in rolling manner
+  company: Sabre Inc.
+  license: MIT
+  min_ansible_version: 1.4
+  platforms:
+  - name: EL
+    versions:
+    - all
+  - name: GenericUNIX
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: opensuse
+    versions:
+    - all
+  - name: GenericBSD
+    versions:
+    - all
+  - name: FreeBSD
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  - name: SLES
+    versions:
+    - all
+  - name: GenericLinux
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  - name: AmazonLinuxAMI
+    versions:
+    - all
+  categories:
+  - system
+dependencies: []
