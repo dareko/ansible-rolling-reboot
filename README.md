@@ -1,7 +1,7 @@
 Rolling Reboot Playbook
 ========
 
-The [dareko.rolling.reboot](https://galaxy.ansibleworks.com/list#/roles/) playbook performs servers reboot in rolling manner.
+The [dareko.rolling_reboot](https://galaxy.ansibleworks.com/list#/roles/424) playbook performs servers reboot in rolling manner.
 
 Requirements
 ------------
@@ -31,7 +31,7 @@ Example
           sudo: true
           serial: 1
           roles:
-          - role: dareko.rolling.reboot
+          - role: dareko.rolling_reboot
 
 3. Execute the the playbook
 
