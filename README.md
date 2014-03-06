@@ -20,8 +20,13 @@ The variables that can be passed to this role with default values are as follows
     # by default wait for ssh daemon after reboot
     rolling_reboot_wait_port: 22
 
-Example
--------
+Dependencies
+------------
+
+None
+
+Example Playbook
+----------------
 
 1. Add a group to the `hosts` inventory file
 
@@ -36,11 +41,6 @@ Example
 3. Execute the the playbook
 
         ansible-playbook -i hosts rolling_reboot.yml -e "rolling_reboot_group=<group_name> rolling_reboot_wait_port=22"
-
-Dependencies
-------------
-
-None
 
 License
 -------

@@ -36,7 +36,7 @@ galaxy_info:
   - name: Debian
     versions:
     - all
-  - name: AmazonLinuxAMI
+  - name: Amazon
     versions:
     - all
   categories:
