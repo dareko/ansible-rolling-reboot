@@ -2,15 +2,18 @@
 # This role conains tasks for servers reboot in rolling manner
 
 - name: rebooting server
-  command: /sbin/shutdown -r now
+  command: /sbin/shutdown -r now "Ansible updates triggered"
+  async: 0
+  poll: 0
+  ignore_errors: true
   tags: reboot
 
 - name: waiting for port after reboot
-  wait_for: host={{ inventory_hostname }} port={{ rolling_reboot_wait_port }} delay={{ _rolling_reboot.wait_delay }} state=started
-  connection: local
+  local_action: wait_for host={{ ansible_ssh_host|default(inventory_hostname) }} port={{ rolling_reboot_wait_port }} delay={{ rolling_reboot_wait_delay }} state=started
   sudo: false
   tags: reboot
 
 - name: pausing
   pause: minutes={{ rolling_reboot_pause }}
   tags: reboot
+  when: rolling_reboot_pause > 0
