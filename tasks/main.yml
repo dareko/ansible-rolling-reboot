@@ -9,7 +9,7 @@
   tags: reboot
 
 - name: waiting for port after reboot
-  local_action: wait_for host={{ ansible_ssh_host | default(inventory_hostname) }} port={{ rolling_reboot_wait_port }} delay={{ rolling_reboot_wait_delay }} state=started
+  local_action: wait_for host={{ ansible_ssh_host|default(inventory_hostname) }} port={{ rolling_reboot_wait_port }} delay={{ rolling_reboot_wait_delay }} state=started
   sudo: false
   tags: reboot
 
