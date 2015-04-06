@@ -1,4 +1,5 @@
 ---
+version: 1.0.1
 galaxy_info:
   author: Dariusz Owczarek
   description: Playbook for servers reboot in rolling manner
