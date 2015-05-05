@@ -1,8 +1,11 @@
 ---
 # This role conains tasks for servers reboot in rolling manner
 
+- name: copy helper script
+  copy: src=helper/reboot-soon.sh dest=/tmp/reboot-soon.sh mode=755
+
 - name: rebooting server
-  command: /sbin/shutdown -r now
+  command: /tmp/reboot-soon.sh &
   tags: reboot
 
 - name: waiting for port after reboot
@@ -12,5 +15,5 @@
   tags: reboot
 
 - name: pausing
-  pause: minutes={{ rolling_reboot_pause }}
+  pause: seconds={{ rolling_reboot_pause }}
   tags: reboot
